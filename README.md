@@ -1,63 +1,11 @@
 <html> 
-  <head>
-    <title>Processing.JS inside Webpages: Template</title> 
-  </head>
-  <body>
-	<!--This draws the canvas on the webpage -->
-    <canvas id="mycanvas"></canvas> 
-  </body>
- 
-  <!-- Include the processing.js library -->
-  <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
-  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
-  <script>
-  var programCode = function(processingInstance) {
-    with (processingInstance) {
-      size(400, 400); 
-      frameRate(30);
-        
-      // Paste code from Khan Academy here:
-      fill(255, 255, 0);
-      ellipse(200, 200, 200, 200);
-      noFill();
-      stroke(0, 0, 0);
-      strokeWeight(2);
-      arc(200, 200, 150, 100, 0, PI);
-      fill(0, 0, 0);
-      ellipse(250, 200, 10, 10);
-      ellipse(153, 200, 10, 10);
-    }};
-
-  // Get the canvas that ProcessingJS will use
-  var canvas = document.getElementById("mycanvas"); 
-  // Pass the function to ProcessingJS constructor
-  var processingInstance = new Processing(canvas, programCode); 
-  </script>
-
-
 <script type="text/javascript">
-function sendHeight()
-{
-    if(parent.postMessage)
-    {
-        // replace #wrapper with element that contains 
-        // actual page content
-        var height= document.getElementById('wrapper').offsetHeight;
-        parent.postMessage(height, '*');
-    }
-}
+window.addEventListener('load', function() {
+	let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
 
-// Create browser compatible event handler.
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-
-// Listen for a message from the iframe.
-eventer(messageEvent, function(e) {
-    if (isNaN(e.data)) return;
-    sendHeight();
-}, 
-false);
+	// window.top refers to parent window
+	window.top.postMessage(message, "*");
+});
 </script>
 </html>
 
