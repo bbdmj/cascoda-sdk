@@ -1,5 +1,3 @@
-<html>
-<body>
 <script type="text/javascript">
 function sendHeight()
 {
@@ -22,8 +20,6 @@ eventer(messageEvent, function(e) {
 }, 
 false);
 </script>
-</body>
-</html>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
 
