@@ -1,4 +1,5 @@
-<html> 
+<html>
+<body>
 <script type="text/javascript">
 window.addEventListener('load', function() {
 	let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
@@ -7,6 +8,7 @@ window.addEventListener('load', function() {
 	window.top.postMessage(message, "*");
 });
 </script>
+</body>
 </html>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
