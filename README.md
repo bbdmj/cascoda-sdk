@@ -7,7 +7,7 @@ function sendHeight()
     {
         // replace #wrapper with element that contains 
         // actual page content
-        var height= document.getElementById('wrapper').offsetHeight;
+        var height= document.getElementsByClassName('markdown-body')[0].offsetHeight;
         parent.postMessage(height, '*');
     }
 }
