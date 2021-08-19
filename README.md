@@ -1,14 +1,10 @@
 <script type="text/javascript">
-function sendHeight()
-{if(parent.postMessage) {
-        var height= document.getElementsByClassName('markdown-body')[0].offsetHeight;
-        parent.postMessage(height, '*');
-    }
-}
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-eventer(messageEvent, function(e) {if (isNaN(e.data)) return; sendHeight(); }, false);
+window.addEventListener('load', function() {
+	let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
+
+	// window.top refers to parent window
+	window.top.postMessage(message, "*");
+});
 </script>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
