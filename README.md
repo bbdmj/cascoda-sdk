@@ -4,7 +4,7 @@
 
 The Cascoda SDK includes a comprehensive set of tools for developing systems integrating Cascoda hardware. The SDK is designed to be cross platform and flexible, enabling designing on one system and porting to another with ease. Many [example applications](#example-applications) are included in order to demonstrate use of the systems.
 
-The SDK contains a general API which abstracts the functionality of the CA-8210 or CA-8211, and can be run on baremetal or Linux systems. It also contains a collection of custom and third-party helper libraries, which have been integrated for development convenience. A complete reference of the Cascoda SDK API can be found [here](https://cascoda.github.io/cascoda-sdk-doxygen/).
+The SDK contains a general API which abstracts the functionality of the CA-8210 or CA-8211, and can be run on baremetal or Linux systems. It also contains a collection of custom and third-party helper libraries, which have been integrated for development convenience. A complete reference of the Cascoda SDK API can be found [here](https://cascoda.github.io/cascoda-sdk-doxygen/){:target="_blank"}.
 
 The Bare-Metal BSPs provide a portable abstraction for baremetal platforms, and a useful set of libraries that can be used to bootstrap development. The Linux platform takes advantage of the extra functionality to enable control of multiple devices at a time, and dynamic selection of SPI/UART/USB Cascoda devices.
 
