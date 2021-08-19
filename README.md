@@ -1,24 +1,14 @@
 <script type="text/javascript">
 function sendHeight()
-{
-    if(parent.postMessage)
-    {
-        // replace #wrapper with element that contains 
-        // actual page content
+{if(parent.postMessage) {
         var height= document.getElementsByClassName('markdown-body')[0].offsetHeight;
         parent.postMessage(height, '*');
     }
 }
-// Create browser compatible event handler.
 var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
 var eventer = window[eventMethod];
 var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-// Listen for a message from the iframe.
-eventer(messageEvent, function(e) {
-    if (isNaN(e.data)) return;
-    sendHeight();
-}, 
-false);
+eventer(messageEvent, function(e) {if (isNaN(e.data)) return; sendHeight(); }, false);
 </script>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
