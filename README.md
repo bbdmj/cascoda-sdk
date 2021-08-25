@@ -7,14 +7,14 @@ window.addEventListener('load', function() {
 });
 </script>
 <script type="text/javascript">
-//add smooth scrolling when clicking any anchor link
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+//Smooth scrolling to anchors
+$(".page-header ul a").on("click", function (e) {
+  // 1
+  e.preventDefault();
+  // 2
+  const href = $(this).attr("href");
+  // 3
+  $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
 });
 </script>
 
