@@ -5,12 +5,23 @@ window.addEventListener('load', function() {
 	// window.top refers to parent window
 	window.top.postMessage(message, "*");
 });
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+</script>
+<script type="text/javascript">
+$(function() {
+    /**
+    * Smooth scrolling to page anchor on click
+    **/
+    $("a[href*='#']:not([href='#'])").click(function() {
+        if (
+            location.hostname == this.hostname
+            && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+        ) {
+            var anchor = $(this.hash);
+            anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+            if ( anchor.length ) {
+                $("html, body").animate( { scrollTop: anchor.offset().top }, 1500);
+            }
+        }
     });
 });
 </script>
