@@ -5,8 +5,6 @@ window.addEventListener('load', function() {
 	// window.top refers to parent window
 	window.top.postMessage(message, "*");
 });
-</script>
-<script type="text/javascript">
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
