@@ -6,21 +6,15 @@ window.addEventListener('load', function() {
 	window.top.postMessage(message, "*");
 });
 </script>
-<script type="text/javascript">
-const links = document.querySelectorAll(".page-header ul a");
-for (const link of links) {
-  link.addEventListener("click", clickHandler);
-}
-function clickHandler(e) {
-  e.preventDefault();
-  const href = this.getAttribute("href");
-  const offsetTop = document.querySelector(href).offsetTop;
- 
-  scroll({
-    top: offsetTop,
-    behavior: "smooth"
-  });
-}
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 </script>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
