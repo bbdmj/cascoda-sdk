@@ -1,9 +1,18 @@
 <script type="text/javascript">
+//allow height & width to be queried from an iframe
 window.addEventListener('load', function() {
 	let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };	
-
 	// window.top refers to parent window
 	window.top.postMessage(message, "*");
+});
+//add smooth scrolling when clicking any anchor link
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 </script>
 
