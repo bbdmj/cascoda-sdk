@@ -7,15 +7,20 @@ window.addEventListener('load', function() {
 });
 </script>
 <script type="text/javascript">
-//Smooth scrolling to anchors
-$(".page-header ul a").on("click", function (e) {
-  // 1
+const links = document.querySelectorAll(".page-header ul a");
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+function clickHandler(e) {
   e.preventDefault();
-  // 2
-  const href = $(this).attr("href");
-  // 3
-  $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
-});
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+ 
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
 </script>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
