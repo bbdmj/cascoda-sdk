@@ -7,23 +7,7 @@ window.addEventListener('load', function() {
 });
 </script>
 <script type="text/javascript">
-$(function() {
-    /**
-    * Smooth scrolling to page anchor on click
-    **/
-    $("a[href*='#']:not([href='#'])").click(function() {
-        if (
-            location.hostname == this.hostname
-            && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
-        ) {
-            var anchor = $(this.hash);
-            anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
-            if ( anchor.length ) {
-                $("html, body").animate( { scrollTop: anchor.offset().top }, 1500);
-            }
-        }
-    });
-});
+jQuery('iframe').iFrameResize({inPageLinks:true});
 </script>
 
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
