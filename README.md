@@ -5,11 +5,11 @@ window.addEventListener('load', function() {
 	// window.top refers to parent window
 	window.top.postMessage(message, "*");
 });
+	
 </script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
