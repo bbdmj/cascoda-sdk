@@ -5,6 +5,8 @@ window.addEventListener('load', function() {
 	// window.top refers to parent window
 	window.top.postMessage(message, "*");
 });
+</script>
+<script type="text/javascript">
 //add smooth scrolling when clicking any anchor link
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
