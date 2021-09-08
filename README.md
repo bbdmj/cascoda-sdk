@@ -1,4 +1,3 @@
-<!--
 <script type="text/javascript">
 //allow height & width to be queried from an iframe
 window.addEventListener('load', function() {
@@ -7,7 +6,7 @@ window.addEventListener('load', function() {
 	window.top.postMessage(message, "*");
 });
 </script>
--->
+
 <p align="center"><img src="etc/img/cascoda.png" width="75%"></p>
 
 # Cascoda SDK
